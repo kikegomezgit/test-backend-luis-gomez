@@ -1,0 +1,473 @@
+{
+	"info": {
+		"_postman_id": "155d1c44-49db-41cf-97cb-466652f8f964",
+		"name": "lineUpFootball Api Rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23504021"
+	},
+	"item": [
+		{
+			"name": "lineUpFootball",
+			"item": [
+				{
+					"name": "ACTIONS",
+					"item": [
+						{
+							"name": "getallActions",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://test-backend-luis-gomez-807723208557.us-central1.run.app/api/actions?limit=10&page=1",
+									"protocol": "https",
+									"host": [
+										"test-backend-luis-gomez-807723208557",
+										"us-central1",
+										"run",
+										"app"
+									],
+									"path": [
+										"api",
+										"actions"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "playerId",
+											"value": "67e9f283c6d74ce8af499b3b",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "type",
+											"value": "amarilla",
+											"disabled": true
+										},
+										{
+											"key": "lineUp",
+											"value": "67e9f562b2530dc00ae4b055",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getStats",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://test-backend-luis-gomez-807723208557.us-central1.run.app/api/actions/stats",
+									"protocol": "https",
+									"host": [
+										"test-backend-luis-gomez-807723208557",
+										"us-central1",
+										"run",
+										"app"
+									],
+									"path": [
+										"api",
+										"actions",
+										"stats"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10",
+											"disabled": true
+										},
+										{
+											"key": "playerId",
+											"value": "67e9f283c6d74ce8af499b3b",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "amarilla",
+											"disabled": true
+										},
+										{
+											"key": "lineUp",
+											"value": "67e9f562b2530dc00ae4b055",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create action",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"type\": \"autogol\",\n  \"minute\": 30,\n  \"player\": \"67e9f283c6d74ce8af499b3b\",  // Delantero 1\n  \"lineUp\": \"67e9f562b2530dc00ae4b055\"    // Example lineup ID\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://test-backend-luis-gomez-807723208557.us-central1.run.app/api/actions",
+									"protocol": "https",
+									"host": [
+										"test-backend-luis-gomez-807723208557",
+										"us-central1",
+										"run",
+										"app"
+									],
+									"path": [
+										"api",
+										"actions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete Action",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://test-backend-luis-gomez-807723208557.us-central1.run.app/api/actions/67ea3c509dc872f1f8bff4a1",
+									"protocol": "https",
+									"host": [
+										"test-backend-luis-gomez-807723208557",
+										"us-central1",
+										"run",
+										"app"
+									],
+									"path": [
+										"api",
+										"actions",
+										"67ea3c509dc872f1f8bff4a1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "LINEUPS",
+					"item": [
+						{
+							"name": "upsert lineUp",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"formation\": \"4-4-9\",\n  \"type\": \"local\",\n  \"players\": [\n    \"67e9f283c6d74ce8af499b3b\",\n    \"67e9f283c6d74ce8af499b3c\",\n    \"67e9f283c6d74ce8af499b3d\", \n    \"67e9f283c6d74ce8af499b3f\", \n    \"67e9f283c6d74ce8af499b40\", \n    \"67e9f283c6d74ce8af499b41\", \n    \"67e9f283c6d74ce8af499b42\", \n    \"67e9f283c6d74ce8af499b43\", \n    \"67e9f283c6d74ce8af499b45\",\n    \"67e9f283c6d74ce8af499b46\", \n    \"67e9f283c6d74ce8af499b4a\" \n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://test-backend-luis-gomez-807723208557.us-central1.run.app/api/lineUps",
+									"protocol": "https",
+									"host": [
+										"test-backend-luis-gomez-807723208557",
+										"us-central1",
+										"run",
+										"app"
+									],
+									"path": [
+										"api",
+										"lineUps"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteLineUp",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"formation\": \"4-4-2\",\n  \"type\": \"local\",\n  \"players\": [\n    \"67e9f283c6d74ce8af499b3b\", // Defensa 1\n    \"67e9f283c6d74ce8af499b3c\", // Defensa 2\n    \"67e9f283c6d74ce8af499b3d\", // Defensa 3\n    \"67e9f283c6d74ce8af499b3f\", // Defensa 5\n    \"67e9f283c6d74ce8af499b40\", // Medio 1\n    \"67e9f283c6d74ce8af499b41\", // Medio 2\n    \"67e9f283c6d74ce8af499b42\", // Medio 3\n    \"67e9f283c6d74ce8af499b43\", // Medio 4\n    \"67e9f283c6d74ce8af499b45\", // Delantero 1\n    \"67e9f283c6d74ce8af499b46\", // Delantero 2\n    \"67e9f283c6d74ce8af499b4a\"  // Portero 1\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://test-backend-luis-gomez-807723208557.us-central1.run.app/api/lineUps/",
+									"protocol": "https",
+									"host": [
+										"test-backend-luis-gomez-807723208557",
+										"us-central1",
+										"run",
+										"app"
+									],
+									"path": [
+										"api",
+										"lineUps",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get lineUp by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://test-backend-luis-gomez-807723208557.us-central1.run.app/api/lineups/67e9f562b2530dc00ae4b055?players=true&actions=true",
+									"protocol": "https",
+									"host": [
+										"test-backend-luis-gomez-807723208557",
+										"us-central1",
+										"run",
+										"app"
+									],
+									"path": [
+										"api",
+										"lineups",
+										"67e9f562b2530dc00ae4b055"
+									],
+									"query": [
+										{
+											"key": "players",
+											"value": "true"
+										},
+										{
+											"key": "actions",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PLAYERS",
+					"item": [
+						{
+							"name": "createPlayer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nickname\":\"jaime\",\n    \"backNumber\":\"50\",\n    \"position\":\"defensa\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://test-backend-luis-gomez-807723208557.us-central1.run.app/api/players",
+									"protocol": "https",
+									"host": [
+										"test-backend-luis-gomez-807723208557",
+										"us-central1",
+										"run",
+										"app"
+									],
+									"path": [
+										"api",
+										"players"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updatePlayer",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nickname\": \"Defensa 1 Modificado\",\n  \"backNumber\": 2,\n  \"position\": \"defensa\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://test-backend-luis-gomez-807723208557.us-central1.run.app/api/players/67e9f283c6d74ce8af499b3b",
+									"protocol": "https",
+									"host": [
+										"test-backend-luis-gomez-807723208557",
+										"us-central1",
+										"run",
+										"app"
+									],
+									"path": [
+										"api",
+										"players",
+										"67e9f283c6d74ce8af499b3b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deletePlayer",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://test-backend-luis-gomez-807723208557.us-central1.run.app/api/players/67e9f283c6d74ce8af499b3b",
+									"protocol": "https",
+									"host": [
+										"test-backend-luis-gomez-807723208557",
+										"us-central1",
+										"run",
+										"app"
+									],
+									"path": [
+										"api",
+										"players",
+										"67e9f283c6d74ce8af499b3b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "insertManyPlayers",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"players\": [\n        {\n            \"nickname\": \"Defensa 1\",\n            \"backNumber\": 2,\n            \"position\": \"defensa\"\n        },\n        {\n            \"nickname\": \"Defensa 2\",\n            \"backNumber\": 3,\n            \"position\": \"defensa\"\n        },\n        {\n            \"nickname\": \"Defensa 3\",\n            \"backNumber\": 4,\n            \"position\": \"defensa\"\n        },\n        {\n            \"nickname\": \"Defensa 4\",\n            \"backNumber\": 5,\n            \"position\": \"defensa\"\n        },\n        {\n            \"nickname\": \"Defensa 5\",\n            \"backNumber\": 6,\n            \"position\": \"defensa\"\n        },\n        {\n            \"nickname\": \"Medio 1\",\n            \"backNumber\": 7,\n            \"position\": \"mediocentro\"\n        },\n        {\n            \"nickname\": \"Medio 2\",\n            \"backNumber\": 8,\n            \"position\": \"mediocentro\"\n        },\n        {\n            \"nickname\": \"Medio 3\",\n            \"backNumber\": 9,\n            \"position\": \"mediocentro\"\n        },\n        {\n            \"nickname\": \"Medio 4\",\n            \"backNumber\": 10,\n            \"position\": \"mediocentro\"\n        },\n        {\n            \"nickname\": \"Medio 5\",\n            \"backNumber\": 11,\n            \"position\": \"mediocentro\"\n        },\n        {\n            \"nickname\": \"Delantero 1\",\n            \"backNumber\": 12,\n            \"position\": \"delantero\"\n        },\n        {\n            \"nickname\": \"Delantero 2\",\n            \"backNumber\": 13,\n            \"position\": \"delantero\"\n        },\n        {\n            \"nickname\": \"Delantero 3\",\n            \"backNumber\": 14,\n            \"position\": \"delantero\"\n        },\n        {\n            \"nickname\": \"Delantero 4\",\n            \"backNumber\": 15,\n            \"position\": \"delantero\"\n        },\n        {\n            \"nickname\": \"Delantero 5\",\n            \"backNumber\": 16,\n            \"position\": \"delantero\"\n        },\n        {\n            \"nickname\": \"Portero 1\",\n            \"backNumber\": 1,\n            \"position\": \"portero\"\n        },\n        {\n            \"nickname\": \"Portero 2\",\n            \"backNumber\": 17,\n            \"position\": \"portero\"\n        },\n        {\n            \"nickname\": \"Portero 3\",\n            \"backNumber\": 18,\n            \"position\": \"portero\"\n        },\n        {\n            \"nickname\": \"Portero 4\",\n            \"backNumber\": 19,\n            \"position\": \"portero\"\n        },\n        {\n            \"nickname\": \"Portero 5\",\n            \"backNumber\": 20,\n            \"position\": \"portero\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://test-backend-luis-gomez-807723208557.us-central1.run.app/api/players/bulk",
+									"protocol": "https",
+									"host": [
+										"test-backend-luis-gomez-807723208557",
+										"us-central1",
+										"run",
+										"app"
+									],
+									"path": [
+										"api",
+										"players",
+										"bulk"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getPlayers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://test-backend-luis-gomez-807723208557.us-central1.run.app/api/players?page=1&limit=15&position=defensa",
+									"protocol": "https",
+									"host": [
+										"test-backend-luis-gomez-807723208557",
+										"us-central1",
+										"run",
+										"app"
+									],
+									"path": [
+										"api",
+										"players"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "15"
+										},
+										{
+											"key": "position",
+											"value": "defensa"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
