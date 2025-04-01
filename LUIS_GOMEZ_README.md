@@ -14,7 +14,10 @@ Solo se permite un local y un visitante
 
 Tests con jest
 Solo cree pruebas unitarias en las apis "importantes", el deber ser seria en todas pero como es un ejercicio no veo importancia en ser minucioso
+npm run test para ejecutarlas
 
-comandos a correr en local
-// docker-compose up --build
-// npm run test
+instrucciones para correr proyecto
+docker-compose up --build
+
+lineUpFootball Api Rest.postman_collection.json contiene una coleccion de postman para usar las apis desde mi host de google cloud run
+en https://test-backend-luis-gomez-807723208557.us-central1.run.app
