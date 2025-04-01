@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    container_name: alineador-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+    environment:
+      - PORT=8080
+      - REDIS_URL=redis://redis:6379
+    command: ["node", "dist/server.js"]
+
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
